@@ -33,7 +33,7 @@ export function Landing() {
       <div className="flex flex-col min-h-[100dvh]">
         <header className="px-4 lg:px-6 h-14 flex items-center">
           <Link className="flex items-center justify-center" href="#">
-            <BrainIcon className="h-6 w-6" />
+            <BrainIcon />
             <span className="sr-only">Padana</span>
             <span className="ml-2 text-gray-900 font-semibold">Padana</span>
           </Link>
@@ -96,19 +96,19 @@ export function Landing() {
                   </div>
                   <ul className="grid gap-2 py-4">
                     <li>
-                      <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                      <CheckIcon />
                       Ask questions to get expert insights
                     </li>
                     <li>
-                      <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                      <CheckIcon />
                       Access diverse expertise across domains
                     </li>
                     <li>
-                      <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                      <CheckIcon />
                       Personalize your experience with specific experts
                     </li>
                     <li>
-                      <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                      <CheckIcon />
                       Tools and services for podcasters
                     </li>
                   </ul>
@@ -234,19 +234,19 @@ export function Landing() {
                   </div>
                   <ul className="grid gap-2 py-4">
                     <li>
-                      <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                      <CheckIcon />
                       Connect with drug research experts
                     </li>
                     <li>
-                      <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                      <CheckIcon />
                       Learn about the latest breakthroughs
                     </li>
                     <li>
-                      <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                      <CheckIcon />
                       Ask questions and get personalized insights
                     </li>
                     <li>
-                      <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                      <CheckIcon />
                       Expand your knowledge in the field of drug research
                     </li>
                   </ul>
@@ -293,10 +293,9 @@ export function Landing() {
   )
 }
 
-function BrainIcon(props) {
+function BrainIcon() {
   return (
     <svg
-      {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -314,10 +313,9 @@ function BrainIcon(props) {
 }
 
 
-function CheckIcon(props) {
+function CheckIcon() {
   return (
     <svg
-      {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
