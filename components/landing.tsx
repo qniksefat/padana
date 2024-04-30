@@ -26,6 +26,8 @@ To read more about using these font, please visit the Next.js documentation:
 import Link from "next/link"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import { Card, CardHeader, CardContent } from "@/components/ui/card"
+import { PodcastIcon } from "lucide-react"
 
 export function Landing() {
   return (
@@ -33,7 +35,7 @@ export function Landing() {
       <div className="flex flex-col min-h-[100dvh]">
         <header className="px-4 lg:px-6 h-14 flex items-center">
           <Link className="flex items-center justify-center" href="#">
-            <BrainIcon />
+            <PodcastIcon />
             <span className="sr-only">Padana</span>
             <span className="ml-2 text-gray-900 font-semibold">Padana</span>
           </Link>
@@ -54,20 +56,20 @@ export function Landing() {
         </header>
         <main className="flex-1">
           <section className="w-full py-12 md:py-24 lg:py-32">
-            <div className="container px-4 md:px-6">
+            <div className="container mx-auto px-4 md:px-6"> 
               <div className="flex flex-col items-center space-y-4 text-center">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500" style={{ lineHeight: "1.2" }}>
                   Elevate. Engage. Enlighten.
                 </h1>
-                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                  Offer more than episodes; provide answers, knowledge, and value, making your podcast an indispensable
-                  resource.
+                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400" style={{ lineHeight: "1.6" }}>
+                  Offer more than episodes or documents; provide answers, knowledge, and value, making your product an indispensable resource.
                 </p>
                 <div className="w-full max-w-sm space-y-2">
                   <form className="flex space-x-2">
                     <Input className="max-w-lg flex-1" placeholder="Enter your email" type="email" />
                     <Button
-                      className="bg-gradient-to-r from-green-400 to-blue-500 text-white hover:opacity-90 transition-opacity"
+                      className="text-white hover:opacity-90 transition-opacity"
+                      // className="bg-gradient-to-r from-green-400 to-blue-500 text-white hover:opacity-90 transition-opacity"
                       type="submit"
                     >
                       Join Waitlist
@@ -76,17 +78,139 @@ export function Landing() {
                 </div>
               </div>
             </div>
-            <div className="w-full h-4 bg-gradient-to-r from-green-400 to-blue-500 mt-8" />
+            {/* <div className="w-full h-4 bg-gradient-to-r from-green-400 to-blue-500 mt-8" /> */}
           </section>
-          <section className="w-full py-12 md:py-24 lg:py-32">
-            <div className="container px-4 md:px-6">
+
+          <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+            <div className="container
+            mx-auto
+            grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
+              <div className="space-y-6">
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight bg-clip-text text-gray-900 bg-gray-100 dark:text-gray-900">
+                  Using what works and scales
+                </h2>
+                <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                  Our platform uses the latest but proven technologies to ensure we deliver the best results.
+                </p>
+              </div>
+              <div className="grid w-full grid-cols-2 lg:grid-cols-5 items-center justify-center gap-8 lg:gap-12 [&>img]:mx-auto">
+                <img
+                  alt="OpenAI"
+                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
+                  height="70"
+                  src="/openai.svg"
+                  width="140"
+                />
+                <img
+                  alt="Meta Llama"
+                  className="aspect-[2/1] col-span-2 lg:col-span-1 overflow-hidden rounded-lg object-contain object-center"
+                  src="/meta.svg"
+                  height="60"
+                  width="120"
+                />
+                <img
+                  alt="PostgreSQL"
+                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
+                  height="70"
+                  src="/psql.svg"
+                  width="140"
+                />
+                <img
+                  alt="MongoDB"
+                  src="/mongodb.svg"
+                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
+                  height="70"
+                  width="140"
+                />
+                <img
+                  alt="Llama"
+                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
+                  height="70"
+                  src="/llama.jpeg"
+                  width="140"
+                />
+              </div>
+            </div>
+          </section>
+
+
+          {/* <section className="bg-gray-100 py-12 md:py-24 lg:py-32 dark:bg-gray-800">
+            <div className="container mx-auto px-4 md:px-6">
+              <div className="grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
+                <div className="flex flex-col justify-center space-y-4">
+                  <div className="space-y-4">
+                    <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+                      Meet the Experts
+                    </div>
+                    
+                    <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-dark bg-gray-900">
+                      Discover Cutting-Edge Research
+                    </h2>
+                    <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                      Gain personalized access to a diverse range of experts, including leading drug researchers, and
+                      get insights into the latest advancements in the field.
+                    </p>
+                  </div>
+                  <ul className="grid gap-2 py-4">
+                    <li>
+                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                      Connect with drug research experts
+                    </li>
+                    <li>
+                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                      Learn about the latest breakthroughs
+                    </li>
+                    <li>
+                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                      Ask questions and get personalized insights
+                    </li>
+                    <li>
+                      <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                      Expand your knowledge in the field of drug research
+                    </li>
+                  </ul>
+                  <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                    <Link
+                      className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm 
+                      font-medium text-gray-50 shadow transition-colors hover:opacity-90 focus-visible:outline-none 
+                      focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+                      href="#"
+                    >
+                      Join Waitlist
+                    </Link>
+                    <Link
+                      className="inline-flex h-10 items-center justify-center rounded-md 
+                      border border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors 
+                      hover:bg-gray-100 hover:text-gray-900 
+                      focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none 
+                      disabled:opacity-50 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 
+                      dark:focus-visible:ring-gray-300 dark:border-gray-800"
+                      href="#"
+                    >
+                      Learn More
+                    </Link>
+                  </div>
+                </div>
+                <img
+                  alt="Drug Researcher"
+                  className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
+                  height="310"
+                  src="/placeholder.svg"
+                  width="550"
+                />
+              </div>
+            </div>
+          </section> */}
+
+          {/* <section className="bg-gray-100 py-12 md:py-24 lg:py-32 dark:bg-gray-800">
+            <div className="container mx-auto px-4 md:px-6">
               <div className="grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
                 <div className="flex flex-col justify-center space-y-4">
                   <div className="space-y-4">
                     <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
                       Key Features
                     </div>
-                    <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
+                    <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-dark bg-gray-900">
                       Elevate Your Knowledge
                     </h2>
                     <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
@@ -96,25 +220,26 @@ export function Landing() {
                   </div>
                   <ul className="grid gap-2 py-4">
                     <li>
-                      <CheckIcon />
+                      <CheckIcon className="mr-2 inline-block h-4 w-4" />
                       Ask questions to get expert insights
                     </li>
                     <li>
-                      <CheckIcon />
+                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
                       Access diverse expertise across domains
                     </li>
                     <li>
-                      <CheckIcon />
+                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
                       Personalize your experience with specific experts
                     </li>
                     <li>
-                      <CheckIcon />
+                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
                       Tools and services for podcasters
                     </li>
                   </ul>
                   <div className="flex flex-col gap-2 min-[400px]:flex-row">
                     <Link
-                      className="inline-flex h-10 items-center justify-center rounded-md bg-gradient-to-r from-green-400 to-blue-500 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:opacity-90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+                    // let's make it a dark button 
+                      className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:opacity-90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
                       href="#"
                     >
                       Join Waitlist
@@ -136,145 +261,123 @@ export function Landing() {
                 />
               </div>
             </div>
-          </section>
-          <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
-            <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
-              <div className="space-y-6">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
-                  Trusted by Experts Worldwide
-                </h2>
-                <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  Our platform is used by experts across various domains to share their knowledge and connect with
-                  curious learners.
-                </p>
-              </div>
-              <div className="grid w-full grid-cols-2 lg:grid-cols-5 items-center justify-center gap-8 lg:gap-12 [&>img]:mx-auto">
-                <img
-                  alt="Logo"
-                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                  height="70"
-                  src="/placeholder.svg"
-                  width="140"
-                />
-                <img
-                  alt="Logo"
-                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                  height="70"
-                  src="/placeholder.svg"
-                  width="140"
-                />
-                <img
-                  alt="Logo"
-                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                  height="70"
-                  src="/placeholder.svg"
-                  width="140"
-                />
-                <img
-                  alt="Logo"
-                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                  height="70"
-                  src="/placeholder.svg"
-                  width="140"
-                />
-                <img
-                  alt="Logo"
-                  className="aspect-[2/1] col-span-2 lg:col-span-1 overflow-hidden rounded-lg object-contain object-center"
-                  height="70"
-                  src="/placeholder.svg"
-                  width="140"
-                />
+          </section> */}
+
+          <section className="py-12 md:py-24 lg:py-32">
+            <div className="container mx-auto px-4 md:px-6">
+              <div className="mx-auto max-w-2xl">
+                <div className="space-y-2">
+                  <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+                    Expert Knowledge Access
+                  </div>
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Unlock a Wealth of Expertise</h2>
+                  <p className="text-gray-500 md:text-xl dark:text-gray-400">
+                    Gain access to a vast library of curated content from industry experts, covering a wide range of
+                    topics to elevate your YouTube channel, podcast, or research.
+                  </p>
+                </div>
+                <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  <Card>
+                    <CardHeader>
+                      <VideoIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
+                    </CardHeader>
+                    <CardContent>
+                      <h3 className="text-lg font-semibold">Video Production</h3>
+                      <p className="mt-2 text-gray-500 dark:text-gray-400">
+                        Learn from experts on camera techniques, lighting, and editing to elevate your YouTube content.
+                      </p>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardHeader>
+                      <MicIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
+                    </CardHeader>
+                    <CardContent>
+                      <h3 className="text-lg font-semibold">Audio Engineering</h3>
+                      <p className="mt-2 text-gray-500 dark:text-gray-400">
+                        Discover best practices for recording, mixing, and mastering high-quality audio for your podcast.
+                      </p>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardHeader>
+                      <BookIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
+                    </CardHeader>
+                    <CardContent>
+                      <h3 className="text-lg font-semibold">Research Methodology</h3>
+                      <p className="mt-2 text-gray-500 dark:text-gray-400">
+                        Gain insights into effective research techniques and data analysis to support your academic work.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+                <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  <Card>
+                    <CardHeader>
+                      <MicIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
+                    </CardHeader>
+                    <CardContent>
+                      <h3 className="text-lg font-semibold">Podcast Production</h3>
+                      <p className="mt-2 text-gray-500 dark:text-gray-400">
+                        Learn from industry experts on how to create high-quality podcast content, from ideation to
+                        post-production.
+                      </p>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardHeader>
+                      <MegaphoneIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
+                    </CardHeader>
+                    <CardContent>
+                      <h3 className="text-lg font-semibold">Marketing and Promotion</h3>
+                      <p className="mt-2 text-gray-500 dark:text-gray-400">
+                        Discover effective strategies to market and promote your podcast, reaching a wider audience.
+                      </p>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardHeader>
+                      <DollarSignIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
+                    </CardHeader>
+                    <CardContent>
+                      <h3 className="text-lg font-semibold">Monetization</h3>
+                      <p className="mt-2 text-gray-500 dark:text-gray-400">
+                        Learn how to monetize your podcast through sponsorships, memberships, and other revenue streams.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+
               </div>
             </div>
           </section>
+          
           <section className="w-full py-12 md:py-24 lg:py-32 border-t">
-            <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
+            <div className="container grid mx-auto items-center justify-center gap-4 px-4 text-center md:px-6">
               <div className="space-y-6">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight bg-clip-text 
+                // make it dark
+                text-gray-900 bg-gray-100">
                   Join the Waitlist
                 </h2>
-                <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  Be the first to know when we launch and get early access to our platform.
-                </p>
-              </div>
-              <div className="w-full max-w-sm space-y-2">
-                <form className="flex space-x-2">
-                  <Input className="max-w-lg flex-1" placeholder="Enter your email" type="email" />
-                  <Button
-                    className="bg-gradient-to-r from-green-400 to-blue-500 text-white hover:opacity-90 transition-opacity"
-                    type="submit"
-                  >
-                    Join Waitlist
-                  </Button>
-                </form>
-                <p className="text-xs text-gray-500 dark:text-gray-400">
-                  By joining the waitlist, you agree to our
-                  <Link className="underline underline-offset-2" href="#">
-                    Terms & Conditions
-                  </Link>
-                </p>
-              </div>
-            </div>
-          </section>
-          <section className="w-full py-12 md:py-24 lg:py-32">
-            <div className="container px-4 md:px-6">
-              <div className="grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
-                <div className="flex flex-col justify-center space-y-4">
-                  <div className="space-y-4">
-                    <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                      Meet the Experts
-                    </div>
-                    <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
-                      Discover Cutting-Edge Research
-                    </h2>
-                    <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                      Gain personalized access to a diverse range of experts, including leading drug researchers, and
-                      get insights into the latest advancements in the field.
-                    </p>
-                  </div>
-                  <ul className="grid gap-2 py-4">
-                    <li>
-                      <CheckIcon />
-                      Connect with drug research experts
-                    </li>
-                    <li>
-                      <CheckIcon />
-                      Learn about the latest breakthroughs
-                    </li>
-                    <li>
-                      <CheckIcon />
-                      Ask questions and get personalized insights
-                    </li>
-                    <li>
-                      <CheckIcon />
-                      Expand your knowledge in the field of drug research
-                    </li>
-                  </ul>
-                  <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                    <Link
-                      className="inline-flex h-10 items-center justify-center rounded-md bg-gradient-to-r from-green-400 to-blue-500 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:opacity-90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
-                      href="#"
+
+                <div className="w-full max-w-sm space-y-2">
+                  <form className="flex space-x-2">
+                    <Input className="max-w-lg flex-1" placeholder="Enter your email" type="email" />
+                    <Button
+                      className="text-white hover:opacity-90 transition-opacity"
+                      // className="bg-gradient-to-r from-green-400 to-blue-500 text-white hover:opacity-90 transition-opacity"
+                      type="submit"
                     >
                       Join Waitlist
-                    </Link>
-                    <Link
-                      className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300 dark:border-gray-800"
-                      href="#"
-                    >
-                      Learn More
-                    </Link>
-                  </div>
+                    </Button>
+                  </form>
                 </div>
-                <img
-                  alt="Drug Researcher"
-                  className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
-                  height="310"
-                  src="/placeholder.svg"
-                  width="550"
-                />
+                
               </div>
             </div>
           </section>
+
         </main>
         <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
           <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 Padana. All rights reserved.</p>
@@ -313,9 +416,11 @@ function BrainIcon() {
 }
 
 
-function CheckIcon() {
+// let's add props to the CheckIcon component
+function CheckIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
+      {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -330,3 +435,129 @@ function CheckIcon() {
     </svg>
   )
 }
+
+
+function BookIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+    </svg>
+  )
+}
+
+
+function DollarSignIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <line x1="12" x2="12" y1="2" y2="22" />
+      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+    </svg>
+  )
+}
+
+
+function MegaphoneIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="m3 11 18-5v12L3 14v-3z" />
+      <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
+    </svg>
+  )
+}
+
+
+function MicIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+      <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+      <line x1="12" x2="12" y1="19" y2="22" />
+    </svg>
+  )
+}
+
+
+function MountainIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
+    </svg>
+  )
+}
+
+
+function VideoIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="m22 8-6 4 6 4V8Z" />
+      <rect width="14" height="12" x="2" y="6" rx="2" ry="2" />
+    </svg>
+  )
+}
+
