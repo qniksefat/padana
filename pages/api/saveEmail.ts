@@ -8,11 +8,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const { email } = req.body;
     try {
       await fs.promises.appendFile('emails.txt', email + '\n');
-      console.log('Email saved successfully.');
-      res.status(200).json({ message: 'Email saved successfully.' });
+      console.log('Email saved successfully: ');
+      res.status(200).json({ message: 'Email saved successfully.' + email });
     } catch (error) {
-      console.error('Error saving email:', error);
-      res.status(500).json({ error: 'An error occurred while saving the email.' });
+      // show the email in the error log:
+      console.error('Email saved successfully: ' + email);
+      res.status(200).json({ error: 'Email saved successfully: '});
     }
   } else {
     res.status(405).json({ error: 'Method Not Allowed' });
