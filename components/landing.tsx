@@ -23,13 +23,31 @@ To read more about using these font, please visit the Next.js documentation:
 - App Directory: https://nextjs.org/docs/app/building-your-application/optimizing/fonts
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
+'use client'
+
 import Link from "next/link"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardContent } from "@/components/ui/card"
 import { PodcastIcon } from "lucide-react"
+import { useState, useEffect } from 'react';
+import axios from 'axios'; // Import axios for making HTTP requests
 
 export function Landing() {
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post('/api/saveEmail', { email });
+      // Optionally, you can handle success behavior here
+      console.log('Email saved successfully');
+    } catch (error) {
+      // Handle error
+      console.error('Error saving email:', error);
+    }
+  };
+
   return (
     <>
       <div className="flex flex-col min-h-[100dvh]">
@@ -65,16 +83,21 @@ export function Landing() {
                   Offer more than episodes or documents; provide answers, knowledge, and value, making your product an indispensable resource.
                 </p>
                 <div className="w-full max-w-sm space-y-2">
-                  <form className="flex space-x-2">
-                    <Input className="max-w-lg flex-1" placeholder="Enter your email" type="email" />
+                  <form onSubmit={handleSubmit} className="flex space-x-2">
+                    <Input
+                      className="max-w-lg flex-1"
+                      placeholder="Enter your email"
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
                     <Button
                       className="text-white hover:opacity-90 transition-opacity"
-                      // className="bg-gradient-to-r from-green-400 to-blue-500 text-white hover:opacity-90 transition-opacity"
                       type="submit"
                     >
                       Join Waitlist
                     </Button>
-                  </form>
+                  </form> 
                 </div>
               </div>
             </div>
@@ -362,13 +385,18 @@ export function Landing() {
                 </h2>
 
                 <div className="w-full max-w-sm space-y-2">
-                  <form className="flex space-x-2">
-                    <Input className="max-w-lg flex-1" placeholder="Enter your email" type="email" />
+                  <form onSubmit={handleSubmit} className="flex space-x-2">
+                    <Input
+                      className="max-w-lg flex-1"
+                      placeholder="Enter your email"
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
                     <Button
                       className="text-white hover:opacity-90 transition-opacity"
-                      // className="bg-gradient-to-r from-green-400 to-blue-500 text-white hover:opacity-90 transition-opacity"
                       type="submit"
-                    >
+                    > 
                       Join Waitlist
                     </Button>
                   </form>
