@@ -32,11 +32,12 @@ import { Card, CardHeader, CardContent } from "@/components/ui/card"
 import { PodcastIcon } from "lucide-react"
 import { useState, useEffect } from 'react';
 import axios from 'axios'; // Import axios for making HTTP requests
+import React from 'react';
 
 export function Landing() {
   const [email, setEmail] = useState('');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       await axios.post('/api/saveEmail', { email });
