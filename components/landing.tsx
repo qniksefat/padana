@@ -582,9 +582,10 @@ function CorrectIcon(props: React.SVGProps<SVGSVGElement>) {
 
 function PadanaIcon() {
   return (
-    <img
+    <Image
       alt="Padana"
-      className="h-6 w-6"
+      height={24}
+      width={24}
       src="/padana-logo.svg"
     />
   )
