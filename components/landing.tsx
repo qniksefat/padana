@@ -25,6 +25,7 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 'use client'
 
+import Image from 'next/image';
 import Link from "next/link"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -140,40 +141,40 @@ export function Landing() {
                 </p>
               </div>
               <div className="grid w-full grid-cols-2 lg:grid-cols-5 items-center justify-center gap-8 lg:gap-12 [&>img]:mx-auto">
-                <img
+                <Image
                   alt="OpenAI"
                   className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                  height="70"
+                  height={70}
                   src="/openai.svg"
-                  width="140"
+                  width={140}
                 />
-                <img
-                  alt="Meta Llama"
-                  className="aspect-[2/1] col-span-2 lg:col-span-1 overflow-hidden rounded-lg object-contain object-center"
+                <Image
+                  alt="Meta"
+                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
+                  height={60}
                   src="/meta.svg"
-                  height="60"
-                  width="120"
+                  width={120}
                 />
-                <img
+                <Image
                   alt="PostgreSQL"
                   className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                  height="70"
+                  height={70}
                   src="/psql.svg"
-                  width="140"
+                  width={140}
                 />
-                <img
+                <Image
                   alt="MongoDB"
+                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
+                  height={70}
                   src="/mongodb.svg"
-                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                  height="70"
-                  width="140"
+                  width={140}
                 />
-                <img
-                  alt="Llama"
-                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                  height="70"
+                <Image
+                  alt="LlamaIndex"
+                  className="aspect-[2/1] col-span-2 lg:col-span-1 overflow-hidden rounded-lg object-contain object-center"
+                  height={70}
                   src="/llama.jpeg"
-                  width="140"
+                  width={140}
                 />
               </div>
             </div>
