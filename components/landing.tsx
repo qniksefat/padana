@@ -28,9 +28,9 @@ To read more about using these font, please visit the Next.js documentation:
 import Link from "next/link"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { Card, CardHeader, CardContent } from "@/components/ui/card"
-import { PodcastIcon } from "lucide-react"
-import { useState, useEffect } from 'react';
+import { Percent } from "lucide-react"
+// lucide.dev/icons
+import { useState } from 'react';
 import axios from 'axios'; // Import axios for making HTTP requests
 import React from 'react';
 
@@ -52,13 +52,15 @@ export function Landing() {
   return (
     <>
       <div className="flex flex-col min-h-[100dvh]">
+      {/* <div className="relative w-full min-h-screen bg-gradient-to-br from-[#1E1E1E] to-[#0F0F0F] dark:bg-gradient-to-br dark:from-[#0F0F0F] dark:to-[#1E1E1E]"> */}
         <header className="px-4 lg:px-6 h-14 flex items-center">
           <Link className="flex items-center justify-center" href="#">
-            <PodcastIcon />
+            <PadanaIcon />
             <span className="sr-only">Padana</span>
             <span className="ml-2 text-gray-900 font-semibold">Padana</span>
           </Link>
-          <nav className="ml-auto flex gap-4 sm:gap-6">
+          {/* Right bar */}
+          {/* <nav className="ml-auto flex gap-4 sm:gap-6">
             <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
               Features
             </Link>
@@ -71,18 +73,19 @@ export function Landing() {
             <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
               Contact
             </Link>
-          </nav>
+          </nav> */}
         </header>
         <main className="flex-1">
           <section className="w-full py-12 md:py-24 lg:py-32">
             <div className="container mx-auto px-4 md:px-6"> 
               <div className="flex flex-col items-center space-y-4 text-center">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500" style={{ lineHeight: "1.2" }}>
-                  Elevate. Engage. Enlighten.
+                  Supercharge Your Research with AI: ChatPharma
                 </h1>
                 <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400" style={{ lineHeight: "1.6" }}>
-                  Offer more than episodes or documents; provide answers, knowledge, and value, making your product an indispensable resource.
+                  Streamline pharmaceutical data analysis and accelerate informed decision-making with game-changing AI for faster drug discovery.
                 </p>
+
                 <div className="w-full max-w-sm space-y-2">
                   <form onSubmit={handleSubmit} className="flex space-x-2">
                     <Input
@@ -103,6 +106,25 @@ export function Landing() {
               </div>
             </div>
             {/* <div className="w-full h-4 bg-gradient-to-r from-green-400 to-blue-500 mt-8" /> */}
+
+          {/* <div className="relative w-full max-w-md mt-12 mx-auto">
+            <div className="absolute 
+            inset-0 bg-gradient-to-br from-[#6AEAFF] to-[#FF6AE6] 
+            rounded-2xl blur-3xl opacity-50 animate-ripple" />
+            <div className="relative z-10 bg-gray-900 rounded-2xl p-6 space-y-4 shadow-lg">
+              <h2 className="text-2xl font-bold text-gray-50">Join the Waitlist</h2>
+              <p className="text-gray-400">
+                Be the first to experience the power of ChatPharma. Enter your email to join the waitlist.
+              </p>
+              <form className="space-y-4">
+                <Input className="w-full" placeholder="Enter your email" type="email" />
+                <Button className="w-full" type="submit">
+                  Join Waitlist
+                </Button>
+              </form>
+            </div>
+          </div> */}
+
           </section>
 
           <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
@@ -114,7 +136,7 @@ export function Landing() {
                   Using what works and scales
                 </h2>
                 <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  Our platform uses the latest but proven technologies to ensure we deliver the best results.
+                  Our platform uses the latest yet proven technologies to ensure we deliver the best results.
                 </p>
               </div>
               <div className="grid w-full grid-cols-2 lg:grid-cols-5 items-center justify-center gap-8 lg:gap-12 [&>img]:mx-auto">
@@ -287,7 +309,79 @@ export function Landing() {
             </div>
           </section> */}
 
-          <section className="py-12 md:py-24 lg:py-32">
+          <section className="py-12 md:py-24 lg:py-32 mx-auto max-w-6xl">
+            <div className="container px-4 md:px-6">
+              <div className="space-y-4">
+                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+                  Comparison</div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                  How We Stack Up Against the Competition
+                </h2>
+                <p className="text-gray-500 md:text-xl dark:text-gray-400">
+                  See how ChatPharma stands out when it comes to answering Pharmaceutical questions.
+                </p>
+              </div>
+              <div className="mt-8 overflow-x-auto">
+              <table className="w-full table-auto text-left">
+                <thead>
+                  <tr className="bg-gray-100 dark:bg-gray-800">
+                    <th className="px-4 py-2 font-medium">
+                      Metric
+                      <Percent className="h-4 w-4 inline-block ml-1 text-gray-500 dark:text-gray-400" />
+                      </th>
+                    <th className="px-4 py-2 font-medium">
+                      Correct Info
+                      <CorrectIcon className="h-4 w-4 inline-block ml-1 text-green-500 dark:text-green-400" />
+                    </th>
+                    <th className="px-4 py-2 font-medium">
+                      Correct Tone
+                      <MegaphoneIcon className="h-4 w-4 inline-block ml-1 text-green-500 dark:text-green-400" />
+                    </th>
+                    <th className="px-4 py-2 font-medium">
+                      Relevancy*
+                      <MountainIcon className="h-4 w-4 inline-block ml-1 text-green-500 dark:text-green-400" />
+                      </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b text-gray-900 dark:text-gray-100">
+                    <td className="px-4 py-2 font-medium">ChatPharma</td>
+                    <td className="px-4 py-2">85±8</td>
+                    <td className="px-4 py-2">93±3</td>
+                    <td className="px-4 py-2">94±3</td>
+                  </tr>
+                  <tr className="border-b text-gray-900 dark:text-gray-100">
+                    <td className="px-4 py-2 font-medium">Meta Llama3</td>
+                    <td className="px-4 py-2">59±8</td>
+                    <td className="px-4 py-2">67±3</td>
+                    <td className="px-4 py-2">96±3</td>
+                  </tr>
+                  <tr className="border-b text-gray-900 dark:text-gray-100">
+                    <td className="px-4 py-2 font-medium">ChatGPT 4</td>
+                    <td className="px-4 py-2">38±8</td>
+                    <td className="px-4 py-2">77±3</td>
+                    <td className="px-4 py-2">96±3</td>
+                  </tr>
+                  <tr className="border-b text-gray-900 dark:text-gray-100">
+                    <td className="px-4 py-2 font-medium">ChatGPT 3.5</td>
+                    <td className="px-4 py-2">35±8</td>
+                    <td className="px-4 py-2">76±3</td>
+                    <td className="px-4 py-2">89±3</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div className="mt-8">
+                <p className="text-gray-500 dark:text-gray-400">
+                  * Answer Relevancy may be an indicator of hallucination.
+                </p>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          {/* <section className="py-12 md:py-24 lg:py-32">
             <div className="container mx-auto px-4 md:px-6">
               <div className="mx-auto max-w-2xl">
                 <div className="space-y-2">
@@ -374,7 +468,7 @@ export function Landing() {
 
               </div>
             </div>
-          </section>
+          </section> */}
           
           <section className="w-full py-12 md:py-24 lg:py-32 border-t">
             <div className="container grid mx-auto items-center justify-center gap-4 px-4 text-center md:px-6">
@@ -409,7 +503,9 @@ export function Landing() {
 
         </main>
         <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-          <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 Padana. All rights reserved.</p>
+          <p className="text-xs text-gray-500 dark:text-gray-400">
+            © 2024 Padana. All rights reserved.
+            </p>
           <nav className="sm:ml-auto flex gap-4 sm:gap-6">
             <Link className="text-xs hover:underline underline-offset-4" href="#">
               Terms of Service
@@ -445,68 +541,6 @@ function BrainIcon() {
 }
 
 
-// let's add props to the CheckIcon component
-function CheckIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <polyline points="20 6 9 17 4 12" />
-    </svg>
-  )
-}
-
-
-function BookIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
-    </svg>
-  )
-}
-
-
-function DollarSignIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <line x1="12" x2="12" y1="2" y2="22" />
-      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-    </svg>
-  )
-}
-
-
 function MegaphoneIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
@@ -523,28 +557,6 @@ function MegaphoneIcon(props: React.SVGProps<SVGSVGElement>) {
     >
       <path d="m3 11 18-5v12L3 14v-3z" />
       <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
-    </svg>
-  )
-}
-
-
-function MicIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
-      <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
-      <line x1="12" x2="12" y1="19" y2="22" />
     </svg>
   )
 }
@@ -569,8 +581,7 @@ function MountainIcon(props: React.SVGProps<SVGSVGElement>) {
   )
 }
 
-
-function VideoIcon(props: React.SVGProps<SVGSVGElement>) {
+function CorrectIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -584,9 +595,17 @@ function VideoIcon(props: React.SVGProps<SVGSVGElement>) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="m22 8-6 4 6 4V8Z" />
-      <rect width="14" height="12" x="2" y="6" rx="2" ry="2" />
+      <polyline points="20 6 9 17 4 12" />
     </svg>
   )
 }
 
+function PadanaIcon() {
+  return (
+    <img
+      alt="Padana"
+      className="h-6 w-6"
+      src="/padana-logo.svg"
+    />
+  )
+}
