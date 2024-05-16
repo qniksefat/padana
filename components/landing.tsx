@@ -166,10 +166,10 @@ export function Landing() {
                   width={120}
                 />
                 <Image
-                  alt="PostgreSQL"
+                  alt="Azure"
                   className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
                   height={70}
-                  src="/psql.svg"
+                  src="/azure.svg"
                   width={140}
                 />
                 <Image
