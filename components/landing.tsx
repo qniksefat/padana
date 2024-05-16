@@ -77,9 +77,9 @@ export function Landing() {
           </nav> */}
         </header>
         <main className="flex-1">
-          <section className="w-full py-12 md:py-24 lg:py-32">
+            <section className="w-full py-8 md:py-16 lg:py-24">
             <div className="container mx-auto px-4 md:px-6"> 
-              <div className="flex flex-col items-center space-y-4 text-center">
+              <div className="flex flex-col items-center space-y-10 text-center">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500" style={{ lineHeight: "1.2" }}>
                   Supercharge Your Research with AI: ChatPharma
                 </h1>
@@ -91,7 +91,7 @@ export function Landing() {
                   <form onSubmit={handleSubmit} className="flex space-x-2">
                     <Input
                       className="max-w-lg flex-1"
-                      placeholder="Enter your email"
+                      placeholder="Enter your business email"
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
@@ -128,7 +128,7 @@ export function Landing() {
 
           </section>
 
-          <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+          <section className="w-full py-8 md:py-16 lg:py-24 bg-gray-100 dark:bg-gray-800">
             <div className="container
             mx-auto
             grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
@@ -310,7 +310,7 @@ export function Landing() {
             </div>
           </section> */}
 
-          <section className="py-12 md:py-24 lg:py-32 mx-auto max-w-6xl">
+          <section className="py-8 md:py-16 lg:py-24 mx-auto max-w-6xl">
             <div className="container px-4 md:px-6">
               <div className="space-y-4">
                 <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
@@ -471,7 +471,7 @@ export function Landing() {
             </div>
           </section> */}
           
-          <section className="w-full py-12 md:py-24 lg:py-32 border-t">
+          <section className="w-full py-8 md:py-16 lg:py-24 border-t">
             <div className="container grid mx-auto items-center justify-center gap-4 px-4 text-center md:px-6">
               <div className="space-y-6">
                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight bg-clip-text 
@@ -484,7 +484,7 @@ export function Landing() {
                   <form onSubmit={handleSubmit} className="flex space-x-2">
                     <Input
                       className="max-w-lg flex-1"
-                      placeholder="Enter your email"
+                      placeholder="Enter your business email"
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
