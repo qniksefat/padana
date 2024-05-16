@@ -81,12 +81,22 @@ export function Landing() {
             <div className="container mx-auto px-4 md:px-6"> 
               <div className="flex flex-col items-center space-y-10 text-center">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500" style={{ lineHeight: "1.2" }}>
-                  Supercharge Your Research with AI: ChatPharma
+                  Drug Development and Approval with AI: ChatPharma
                 </h1>
                 <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400" style={{ lineHeight: "1.6" }}>
-                  Streamline pharmaceutical data analysis and accelerate informed decision-making with game-changing AI for faster drug discovery.
+                  Streamline pharmaceutical document analysis and accelerate informed decision-making with game-changing AI for faster drug approval.
                 </p>
-
+                <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-8">
+                  <div className="flex items-center space-x-2">
+                    <span className="text-[#4a4a4a] dark:text-[#b3b3b3]">🇺🇸 FDA</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-[#4a4a4a] dark:text-[#b3b3b3]">🇪🇺 EMA</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-[#4a4a4a] dark:text-[#b3b3b3]">🇨🇦 Health Canada</span>
+                  </div>
+                </div>
                 <div className="w-full max-w-sm space-y-2">
                   <form onSubmit={handleSubmit} className="flex space-x-2">
                     <Input
@@ -310,7 +320,7 @@ export function Landing() {
             </div>
           </section> */}
 
-          <section className="py-8 md:py-16 lg:py-24 mx-auto max-w-6xl">
+          <section className="py-8 md:py-16 lg:py-24 mx-auto max-w-4xl">
             <div className="container px-4 md:px-6">
               <div className="space-y-4">
                 <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
@@ -322,7 +332,7 @@ export function Landing() {
                   See how ChatPharma stands out when it comes to answering Pharmaceutical questions.
                 </p>
               </div>
-              <div className="mt-8 overflow-x-auto">
+              <div className="mt-8 overflow-x-auto max-w-3xl">
               <table className="w-full table-auto text-left">
                 <thead>
                   <tr className="bg-gray-100 dark:bg-gray-800">
@@ -352,13 +362,13 @@ export function Landing() {
                     <td className="px-4 py-2">94±3</td>
                   </tr>
                   <tr className="border-b text-gray-900 dark:text-gray-100">
-                    <td className="px-4 py-2 font-medium">Meta Llama3</td>
+                    <td className="px-4 py-2 font-medium">ChatGPT 4</td>
                     <td className="px-4 py-2">59±8</td>
                     <td className="px-4 py-2">67±3</td>
                     <td className="px-4 py-2">96±3</td>
                   </tr>
                   <tr className="border-b text-gray-900 dark:text-gray-100">
-                    <td className="px-4 py-2 font-medium">ChatGPT 4</td>
+                    <td className="px-4 py-2 font-medium">Meta Llama3</td>
                     <td className="px-4 py-2">38±8</td>
                     <td className="px-4 py-2">77±3</td>
                     <td className="px-4 py-2">96±3</td>
